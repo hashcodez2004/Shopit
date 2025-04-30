@@ -72,7 +72,22 @@
                 app:layout_constraintTop_toBottomOf="@id/tv_email"
                 android:background="@drawable/button_background1"
                 android:hint="example@gmail.com"
-                android:paddingHorizontal="@dimen/dp_8"/>
+                android:paddingHorizontal="@dimen/dp_8"
+                android:drawableEnd="@null"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/tv_error_msg"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/et_email"
+                android:layout_marginHorizontal="@dimen/dp_24"
+                android:layout_marginTop="@dimen/dp_6"
+                android:text="Invalid Email or Phone No.!"
+                android:textColor="@color/color9"
+                android:fontFamily="@font/montserrat_medium"
+                android:visibility="gone"/>
 
             <TextView
                 android:layout_width="match_parent"
@@ -85,7 +100,7 @@
                 android:text="Password"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/et_email"/>
+                app:layout_constraintTop_toBottomOf="@id/tv_error_msg"/>
 
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
