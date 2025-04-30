@@ -13,12 +13,12 @@ import com.hashdroid.shopit.databinding.FragmentSignInBinding
 
 class signIn : Fragment() {
     private var _binding: FragmentSignInBinding? = null
-    val binding get() = _binding!!
+    private val binding get() = _binding!!
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         // Inflate the layout for this fragment
         _binding = FragmentSignInBinding.inflate(inflater, container, false)
         return binding.root
@@ -27,21 +27,18 @@ class signIn : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        //making "register" bold using spannable string
         val fullText = "Don't have an account? Register"
         val boldWord = "Register"
-
         val spannable = SpannableString(fullText)
-
         val start = fullText.indexOf(boldWord)
         val end = start + boldWord.length
-
         spannable.setSpan(
             StyleSpan(Typeface.BOLD),
             start,
             end,
             Spanned.SPAN_EXCLUSIVE_EXCLUSIVE
         )
-
         binding.tv2.text = spannable
     }
 }
