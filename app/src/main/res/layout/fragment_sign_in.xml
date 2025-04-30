@@ -1,14 +1,205 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".signIn">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
+    <androidx.core.widget.NestedScrollView
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_width="match_parent"
+        android:fillViewport="true"
+        android:background="@color/white">
 
-</FrameLayout>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:scaleType="fitXY"
+                android:src="@drawable/sign_in_bg"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/shopit_logo"
+                android:adjustViewBounds="true"
+                android:layout_marginTop="@dimen/dp_127"
+                android:foregroundGravity="center_horizontal"
+                android:src="@drawable/shopit_logo_3"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+            <TextView
+                android:id="@+id/tv_1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/dp_24"
+                android:layout_marginTop="@dimen/dp_48"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="Let's Sign You In"
+                android:textSize="@dimen/sp_24"
+                android:textColor="@color/color4"
+                app:layout_constraintTop_toBottomOf="@id/shopit_logo"/>
+
+            <TextView
+                android:id="@+id/tv_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/sp_24"
+                android:layout_marginTop="@dimen/dp_24"
+                android:fontFamily="@font/montserrat_medium"
+                android:textSize="@dimen/sp_16"
+                android:text="Email/Phone No."
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_1"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_60"
+                android:id="@+id/et_email"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginHorizontal="@dimen/dp_24"
+                android:layout_marginTop="@dimen/dp_8"
+                app:layout_constraintTop_toBottomOf="@id/tv_email"
+                android:background="@drawable/button_background1"
+                android:hint="example@gmail.com"
+                android:paddingHorizontal="@dimen/dp_8"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/tv_password"
+                android:layout_marginHorizontal="@dimen/sp_24"
+                android:layout_marginTop="@dimen/dp_24"
+                android:fontFamily="@font/montserrat_medium"
+                android:textSize="@dimen/sp_16"
+                android:text="Password"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/et_email"/>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_60"
+                android:id="@+id/text_input_layout"
+                app:endIconMode="password_toggle"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginHorizontal="@dimen/dp_24"
+                android:layout_marginTop="@dimen/dp_8"
+                app:layout_constraintTop_toBottomOf="@id/tv_password">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/et_password"
+                    android:background="@drawable/button_background1"
+                    android:inputType="textPassword"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tv_forgot"
+                app:layout_constraintTop_toBottomOf="@id/text_input_layout"
+                android:layout_marginTop="@dimen/dp_8"
+                app:layout_constraintRight_toRightOf="parent"
+                android:layout_marginEnd="@dimen/dp_24"
+                android:text="Forgot password?"/>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_54"
+                android:text="Sign In"
+                android:id="@+id/btn_sign_in"
+                android:fontFamily="@font/montserrat_thin"
+                android:background="@drawable/button_background"
+                app:backgroundTint="@null"
+                android:textSize="@dimen/sp_16"
+                android:textStyle="bold"
+                android:layout_marginHorizontal="@dimen/dp_24"
+                android:layout_marginTop="@dimen/dp_24"
+                app:layout_constraintTop_toBottomOf="@id/tv_forgot"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/tv_2"
+                app:layout_constraintTop_toBottomOf="@id/btn_sign_in"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginHorizontal="@dimen/dp_24"
+                android:layout_marginTop="8dp"
+                android:text="Don’t have an account? Register"
+                android:textSize="@dimen/sp_14"
+                android:fontFamily="@font/montserrat_medium"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/ll"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:orientation="horizontal"
+                app:layout_constraintTop_toBottomOf="@id/tv_2"
+                android:layout_marginTop="@dimen/dp_24"
+                android:layout_marginHorizontal="@dimen/dp_24"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_weight="1"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/rectangle_1" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="8dp"
+                    android:text="or sign in with"
+                    android:textSize="@dimen/sp_14"
+                    android:fontFamily="@font/montserrat_medium" />
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_weight="1"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/rectangle_1" />
+
+            </LinearLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_54"
+                app:layout_constraintTop_toBottomOf="@id/ll"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginBottom="@dimen/dp_40"
+                android:layout_marginHorizontal="@dimen/dp_24"
+                android:layout_marginTop="@dimen/dp_24"
+                app:icon="@drawable/google_logo"
+                app:iconTint="@null"
+                app:iconGravity="textStart"
+                android:textColor="@color/color4"
+                android:textSize="@dimen/sp_14"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="Sign In with Google"
+                app:backgroundTint="@null"
+                android:background="@drawable/button_background1"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+</layout>
