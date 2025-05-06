@@ -1,4 +1,4 @@
-package com.hashdroid.shopit.ui
+package com.hashdroid.shopit.ui.Auth
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

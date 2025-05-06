@@ -3,7 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".ui.AuthEntry">
+    tools:context=".ui.Auth.AuthEntry">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -59,7 +59,7 @@
             android:layout_height="@dimen/dp_54"
             android:text="I’m new here"
             android:id="@+id/btn_new_here"
-            android:fontFamily="@font/montserrat_thin"
+            android:fontFamily="@font/montserrat_bold"
             android:background="@drawable/button_background"
             app:backgroundTint="@null"
             android:textSize="@dimen/sp_16"
@@ -76,7 +76,7 @@
             android:layout_height="@dimen/dp_54"
             android:text="I’m already member"
             android:id="@+id/btn_already_member"
-            android:fontFamily="@font/montserrat_thin"
+            android:fontFamily="@font/montserrat_bold"
             android:background="@drawable/button_background1"
             app:backgroundTint="@null"
             android:textSize="@dimen/sp_16"

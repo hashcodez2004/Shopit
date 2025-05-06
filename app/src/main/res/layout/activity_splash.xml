@@ -9,7 +9,7 @@
     android:background="@color/white">
     <ImageView
         android:layout_width="match_parent"
-        android:layout_height="@dimen/dp_552"
+        android:layout_height="wrap_content"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:src="@drawable/splash_bg"

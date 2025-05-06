@@ -6,7 +6,7 @@
     app:startDestination="@id/authEntry">
     <fragment
         android:id="@+id/authEntry"
-        android:name="com.hashdroid.shopit.ui.AuthEntry"
+        android:name="com.hashdroid.shopit.ui.Auth.AuthEntry"
         android:label="fragment_auth_entry"
         tools:layout="@layout/fragment_auth_entry" >
         <action
@@ -18,12 +18,21 @@
     </fragment>
     <fragment
         android:id="@+id/signUp"
-        android:name="com.hashdroid.shopit.SignUp"
+        android:name="com.hashdroid.shopit.ui.Auth.SignUp"
         android:label="fragment_sign_up"
-        tools:layout="@layout/fragment_sign_up" />
+        tools:layout="@layout/fragment_sign_up" >
+        <action
+            android:id="@+id/action_signUp_to_OTP_SignUp"
+            app:destination="@id/OTP_SignUp" />
+    </fragment>
     <fragment
         android:id="@+id/signIn"
-        android:name="com.hashdroid.shopit.signIn"
+        android:name="com.hashdroid.shopit.ui.Auth.SignIn"
         android:label="fragment_sign_in"
         tools:layout="@layout/fragment_sign_in" />
+    <fragment
+        android:id="@+id/OTP_SignUp"
+        android:name="com.hashdroid.shopit.ui.Auth.OTP_SignUp"
+        android:label="fragment_otp_signup"
+        tools:layout="@layout/fragment_otp_signup" />
 </navigation>

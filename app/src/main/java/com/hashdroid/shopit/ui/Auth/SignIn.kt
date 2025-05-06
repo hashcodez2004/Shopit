@@ -1,4 +1,4 @@
-package com.hashdroid.shopit
+package com.hashdroid.shopit.ui.Auth
 
 import android.graphics.Typeface
 import android.os.Bundle
@@ -10,18 +10,17 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.hashdroid.shopit.databinding.FragmentSignInBinding
-import com.hashdroid.shopit.databinding.FragmentSignUpBinding
 
-class SignUp : Fragment() {
-    private var _binding: FragmentSignUpBinding? = null
+class SignIn : Fragment() {
+    private var _binding: FragmentSignInBinding? = null
     private val binding get() = _binding!!
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         // Inflate the layout for this fragment
-        _binding = FragmentSignUpBinding.inflate(inflater, container, false)
+        _binding = FragmentSignInBinding.inflate(inflater, container, false)
         return binding.root
     }
 
@@ -29,8 +28,8 @@ class SignUp : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         //making "register" bold using spannable string
-        val fullText = "Already have an account? Sign In"
-        val boldWord = "Sign In"
+        val fullText = "Don't have an account? Register"
+        val boldWord = "Register"
         val spannable = SpannableString(fullText)
         val start = fullText.indexOf(boldWord)
         val end = start + boldWord.length
@@ -40,6 +39,6 @@ class SignUp : Fragment() {
             end,
             Spanned.SPAN_EXCLUSIVE_EXCLUSIVE
         )
-        binding.tv3.text = spannable
+        binding.tv2.text = spannable
     }
 }
