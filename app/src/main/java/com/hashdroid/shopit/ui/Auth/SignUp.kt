@@ -9,6 +9,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
+import com.hashdroid.shopit.R
 import com.hashdroid.shopit.databinding.FragmentSignUpBinding
 
 class SignUp : Fragment() {
@@ -40,5 +42,10 @@ class SignUp : Fragment() {
             Spanned.SPAN_EXCLUSIVE_EXCLUSIVE
         )
         binding.tv3.text = spannable
+
+
+        binding.btnContinue.setOnClickListener{
+            findNavController().navigate(R.id.action_signUp_to_OTP_SignUp)
+        }
     }
 }

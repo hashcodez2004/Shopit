@@ -5,6 +5,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.Auth.OTP_SignUp">
 
+    <data>
+        <variable
+            name="viewModel"
+            type="com.hashdroid.shopit.models.OtpViewModel"/>
+    </data>
+
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -105,7 +111,9 @@
                     android:layout_marginEnd="@dimen/dp_5"
                     android:layout_weight="1"
                     android:hint="0"
-                    android:gravity="center"/>
+                    android:gravity="center"
+                    android:inputType="number"
+                    android:maxLength="1"/>
                 <EditText
                     android:layout_width="@dimen/dp_0"
                     android:layout_weight="1"
@@ -113,7 +121,9 @@
                     android:background="@drawable/otp_background"
                     android:layout_marginEnd="@dimen/dp_5"
                     android:hint="0"
-                    android:gravity="center"/>
+                    android:gravity="center"
+                    android:inputType="number"
+                    android:maxLength="1"/>
                 <EditText
                     android:layout_width="@dimen/dp_0"
                     android:layout_weight="1"
@@ -121,7 +131,9 @@
                     android:background="@drawable/otp_background"
                     android:layout_marginEnd="@dimen/dp_5"
                     android:hint="0"
-                    android:gravity="center"/>
+                    android:gravity="center"
+                    android:inputType="number"
+                    android:maxLength="1"/>
                 <EditText
                     android:layout_width="@dimen/dp_0"
                     android:layout_weight="1"
@@ -129,7 +141,9 @@
                     android:background="@drawable/otp_background"
                     android:layout_marginEnd="@dimen/dp_5"
                     android:hint="0"
-                    android:gravity="center"/>
+                    android:gravity="center"
+                    android:inputType="number"
+                    android:maxLength="1"/>
                 <EditText
                     android:layout_width="@dimen/dp_0"
                     android:layout_weight="1"
@@ -137,14 +151,18 @@
                     android:background="@drawable/otp_background"
                     android:layout_marginEnd="@dimen/dp_5"
                     android:hint="0"
-                    android:gravity="center"/>
+                    android:gravity="center"
+                    android:inputType="number"
+                    android:maxLength="1"/>
                 <EditText
                     android:layout_width="@dimen/dp_0"
                     android:layout_weight="1"
                     android:layout_height="@dimen/dp_48"
                     android:background="@drawable/otp_background"
                     android:hint="0"
-                    android:gravity="center"/>
+                    android:gravity="center"
+                    android:inputType="number"
+                    android:maxLength="1"/>
             </LinearLayout>
 
             <TextView
@@ -156,7 +174,7 @@
                 app:layout_constraintTop_toBottomOf="@id/ll_OTP"
                 android:layout_marginTop="@dimen/dp_12"
                 android:layout_marginHorizontal="@dimen/dp_24"
-                android:text="Resend OTP in 00:59 second(s)"
+                android:text="@{viewModel.resendText}"
                 android:textSize="@dimen/sp_16"/>
 
             <Button
