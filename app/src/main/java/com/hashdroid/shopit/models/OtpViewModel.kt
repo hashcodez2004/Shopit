@@ -19,18 +19,40 @@ class OtpViewModel : ViewModel() {
 
     private var timer: CountDownTimer? = null
     private val totalTime = 30_000L // 30 seconds
+    private var startTime: Long = 0L
     private var onResendClick: (() -> Unit)? = null
     private var isTimerRunning = false
 
-
     fun startResendTimer(onResendClick: () -> Unit) {
-        if (isTimerRunning) return
-
-        isTimerRunning = true
         this.onResendClick = onResendClick
         timer?.cancel()
+        isTimerRunning = false // 🛡 Reset just in case
 
-        timer = object : CountDownTimer(totalTime, 1000) {
+        val currentTime = System.currentTimeMillis()
+        val timePassed = currentTime - startTime
+
+        when {
+            startTime == 0L -> {
+                startTime = currentTime
+                runTimer(totalTime, onResendClick)
+            }
+            timePassed >= totalTime -> {
+                showResendClickable(onResendClick)
+            }
+            else -> {
+                val timeLeft = totalTime - timePassed
+                runTimer(timeLeft, onResendClick)
+            }
+        }
+    }
+
+    private fun runTimer(timeLeft: Long, onResendClick: () -> Unit) {
+        if (isTimerRunning) return // 🛡 Prevent multiple timers
+        isTimerRunning = true
+
+        timer?.cancel()
+
+        timer = object : CountDownTimer(timeLeft, 1000) {
             override fun onTick(millisUntilFinished: Long) {
                 val seconds = millisUntilFinished / 1000
                 val fullText = "Resend OTP in $seconds second(s)"
@@ -47,38 +69,45 @@ class OtpViewModel : ViewModel() {
             }
 
             override fun onFinish() {
-                val fullText = "Resend OTP"
-                val spannable = SpannableString(fullText)
-
-                val clickableSpan = object : ClickableSpan() {
-                    override fun onClick(widget: View) {
-                        onResendClick?.invoke()
-                        startResendTimer(onResendClick!!)
-                    }
-
-                    override fun updateDrawState(ds: TextPaint) {
-                        super.updateDrawState(ds)
-                        ds.isUnderlineText = false
-                        ds.color = ds.linkColor
-                    }
-                }
-
-                spannable.setSpan(
-                    clickableSpan,
-                    0,
-                    fullText.length,
-                    Spanned.SPAN_EXCLUSIVE_EXCLUSIVE
-                )
-
-                _resendText.postValue(spannable)
+                isTimerRunning = false
+                showResendClickable(onResendClick)
             }
         }
 
         timer?.start()
     }
 
+    private fun showResendClickable(onResendClick: () -> Unit) {
+        val fullText = "Resend OTP"
+        val spannable = SpannableString(fullText)
+
+        val clickableSpan = object : ClickableSpan() {
+            override fun onClick(widget: View) {
+                onResendClick()
+                startTime = System.currentTimeMillis() // reset time
+                runTimer(totalTime, onResendClick)
+            }
+
+            override fun updateDrawState(ds: TextPaint) {
+                super.updateDrawState(ds)
+                ds.isUnderlineText = false
+                ds.color = ds.linkColor
+            }
+        }
+
+        spannable.setSpan(
+            clickableSpan,
+            0,
+            fullText.length,
+            Spanned.SPAN_EXCLUSIVE_EXCLUSIVE
+        )
+
+        _resendText.postValue(spannable)
+    }
+
     override fun onCleared() {
         super.onCleared()
         timer?.cancel()
+        isTimerRunning = false
     }
 }

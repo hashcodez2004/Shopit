@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "322986395769",
+    "project_id": "shopit-6d964",
+    "storage_bucket": "shopit-6d964.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:322986395769:android:d1951a5d8d5fed5d9ceca8",
+        "android_client_info": {
+          "package_name": "com.hashdroid.shopit"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC1x3JY-p1CiXrpJKI_GahQQcXVOCWQygg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

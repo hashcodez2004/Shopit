@@ -34,5 +34,14 @@
         android:id="@+id/OTP_SignUp"
         android:name="com.hashdroid.shopit.ui.Auth.OTP_SignUp"
         android:label="fragment_otp_signup"
-        tools:layout="@layout/fragment_otp_signup" />
+        tools:layout="@layout/fragment_otp_signup" >
+        <action
+            android:id="@+id/action_OTP_SignUp_to_details_SignUp"
+            app:destination="@id/details_SignUp" />
+    </fragment>
+    <fragment
+        android:id="@+id/details_SignUp"
+        android:name="com.hashdroid.shopit.ui.Auth.Details_SignUp"
+        android:label="fragment_details__sign_up"
+        tools:layout="@layout/fragment_details__sign_up" />
 </navigation>

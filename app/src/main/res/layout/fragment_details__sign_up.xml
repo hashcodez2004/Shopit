@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.Auth.Details_SignUp">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.hashdroid.shopit.models.OtpViewModel"/>
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:background="@color/white">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:scaleType="fitXY"
+                android:src="@drawable/sign_in_bg"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/tv_1"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginHorizontal="@dimen/dp_24"
+                android:text="Select your gender"
+                android:layout_marginTop="@dimen/dp_127"
+                android:textSize="@dimen/sp_18"
+                android:fontFamily="@font/montserrat_bold"
+                android:textColor="@color/color14"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/ll_1"
+                android:orientation="horizontal"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginHorizontal="@dimen/dp_24"
+                app:layout_constraintTop_toBottomOf="@id/tv_1"
+                android:layout_marginTop="@dimen/dp_24">
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:id="@+id/img_1"
+                    android:src="@drawable/logo_man"
+                    android:layout_weight="1"/>
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:id="@+id/img_2"
+                    android:src="@drawable/logo_women"
+                    android:layout_weight="1"/>
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/tv_2"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginHorizontal="@dimen/dp_24"
+                app:layout_constraintTop_toBottomOf="@id/ll_1"
+                android:text="What is your name?"
+                android:textSize="@dimen/dp_24"
+                android:fontFamily="@font/montserrat_bold"
+                android:textColor="@color/color14"
+                android:layout_marginTop="@dimen/dp_24"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:id="@+id/ll_2"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginHorizontal="@dimen/dp_24"
+                app:layout_constraintTop_toBottomOf="@id/tv_2"
+                android:layout_marginTop="@dimen/dp_24">
+
+                <EditText
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/dp_48"
+                    android:id="@+id/et_firstName"
+                    android:layout_weight="1"
+                    android:background="@drawable/border_normal"
+                    android:layout_marginEnd="@dimen/dp_10"
+                    android:hint="First name"
+                    android:paddingStart="@dimen/dp_10"/>
+                <EditText
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/dp_48"
+                    android:id="@+id/et_lastName"
+                    android:layout_weight="1"
+                    android:background="@drawable/border_normal"
+                    android:hint="Last name"
+                    android:paddingStart="@dimen/dp_10"/>
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tv_3"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginHorizontal="@dimen/dp_24"
+                app:layout_constraintTop_toBottomOf="@id/ll_2"
+                android:text="Set up Password"
+                android:textSize="@dimen/sp_16"
+                android:fontFamily="@font/montserrat_bold"
+                android:textColor="@color/color14"
+                android:layout_marginTop="@dimen/dp_24"
+                android:drawableEnd="@drawable/logo_set_up_pass"
+                android:drawablePadding="@dimen/dp_12"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_48"
+                android:id="@+id/et_pass"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginHorizontal="@dimen/dp_24"
+                app:layout_constraintTop_toBottomOf="@id/tv_3"
+                android:drawableStart="@drawable/lock_logo_password"
+                android:background="@drawable/border_normal"
+                android:layout_marginTop="@dimen/dp_16"
+                android:paddingStart="@dimen/dp_10"
+                android:drawablePadding="@dimen/dp_5"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_48"
+                android:id="@+id/et_confirm_pass"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginHorizontal="@dimen/dp_24"
+                app:layout_constraintTop_toBottomOf="@id/et_pass"
+                android:background="@drawable/border_normal"
+                android:layout_marginTop="@dimen/dp_16"
+                android:drawableStart="@drawable/lock_logo_password"
+                android:paddingStart="@dimen/dp_10"
+                android:drawablePadding="@dimen/dp_5"/>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_54"
+                android:id="@+id/btn_createAcc"
+                android:text="Create Account"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:backgroundTint="@null"
+                android:fontFamily="@font/montserrat_bold"
+                android:background="@drawable/button_background"
+                android:layout_marginHorizontal="@dimen/dp_24"
+                app:layout_constraintTop_toBottomOf="@id/et_confirm_pass"
+                android:layout_marginTop="@dimen/dp_16"/>
+            
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/shopit_logo"
+                android:src="@drawable/shopit_logo_4"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginTop="@dimen/dp_50"
+                app:layout_constraintTop_toBottomOf="@id/btn_createAcc"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+</layout>
