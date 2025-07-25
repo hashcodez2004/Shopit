@@ -140,7 +140,8 @@
                 android:background="@drawable/border_normal"
                 android:layout_marginTop="@dimen/dp_16"
                 android:paddingStart="@dimen/dp_10"
-                android:drawablePadding="@dimen/dp_5"/>
+                android:drawablePadding="@dimen/dp_5"
+                android:hint="Password"/>
 
             <EditText
                 android:layout_width="match_parent"
@@ -154,7 +155,8 @@
                 android:layout_marginTop="@dimen/dp_16"
                 android:drawableStart="@drawable/lock_logo_password"
                 android:paddingStart="@dimen/dp_10"
-                android:drawablePadding="@dimen/dp_5"/>
+                android:drawablePadding="@dimen/dp_5"
+                android:hint="Confirm Password"/>
 
             <Button
                 android:layout_width="match_parent"
