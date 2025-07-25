@@ -29,7 +29,11 @@
         android:id="@+id/signIn"
         android:name="com.hashdroid.shopit.ui.Auth.SignIn"
         android:label="fragment_sign_in"
-        tools:layout="@layout/fragment_sign_in" />
+        tools:layout="@layout/fragment_sign_in" >
+        <action
+            android:id="@+id/action_signIn_to_forgotPassword"
+            app:destination="@id/forgotPassword" />
+    </fragment>
     <fragment
         android:id="@+id/OTP_SignUp"
         android:name="com.hashdroid.shopit.ui.Auth.OTP_SignUp"
@@ -44,4 +48,9 @@
         android:name="com.hashdroid.shopit.ui.Auth.Details_SignUp"
         android:label="fragment_details__sign_up"
         tools:layout="@layout/fragment_details__sign_up" />
+    <dialog
+        android:id="@+id/forgotPassword"
+        android:name="com.hashdroid.shopit.ui.Auth.ForgotPassword"
+        android:label="fragment_forgot_password"
+        tools:layout="@layout/fragment_forgot_password" />
 </navigation>
