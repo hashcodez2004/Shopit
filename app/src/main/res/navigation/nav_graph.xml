@@ -52,5 +52,14 @@
         android:id="@+id/forgotPassword"
         android:name="com.hashdroid.shopit.ui.Auth.ForgotPassword"
         android:label="fragment_forgot_password"
-        tools:layout="@layout/fragment_forgot_password" />
+        tools:layout="@layout/fragment_forgot_password" >
+        <action
+            android:id="@+id/action_forgotPassword_to_otpVerification"
+            app:destination="@id/otpVerification" />
+    </dialog>
+    <dialog
+        android:id="@+id/otpVerification"
+        android:name="com.hashdroid.shopit.ui.Auth.OtpVerification"
+        android:label="fragment_otp_verification"
+        tools:layout="@layout/fragment_otp_verification" />
 </navigation>

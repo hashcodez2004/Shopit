@@ -28,6 +28,12 @@ class ForgotPassword : BottomSheetDialogFragment() {
         binding = FragmentForgotPasswordBinding.inflate(inflater,container,false)
         binding.viewModel = viewModel
         binding.lifecycleOwner = viewLifecycleOwner
+
+        binding.btnContinue.setOnClickListener {
+            val bottomSheet = OtpVerification()
+            bottomSheet.show(parentFragmentManager, bottomSheet.tag)
+        }
+
         return binding.root
     }
 
