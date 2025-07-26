@@ -40,5 +40,10 @@ class SignIn : Fragment() {
             Spanned.SPAN_EXCLUSIVE_EXCLUSIVE
         )
         binding.tv2.text = spannable
+
+        binding.tvForgot.setOnClickListener {
+            val bottomSheet = ForgotPassword()
+            bottomSheet.show(parentFragmentManager, bottomSheet.tag)
+        }
     }
 }
