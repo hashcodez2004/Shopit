@@ -24,6 +24,9 @@
         <action
             android:id="@+id/action_signUp_to_OTP_SignUp"
             app:destination="@id/OTP_SignUp" />
+        <action
+            android:id="@+id/action_signUp_to_details_SignUp"
+            app:destination="@id/details_SignUp" />
     </fragment>
     <fragment
         android:id="@+id/signIn"
