@@ -52,12 +52,16 @@ dependencies {
     implementation(libs.androidx.credentials)
     implementation(libs.androidx.credentials.play.services.auth)
     implementation(libs.googleid)
+    implementation(libs.firebase.appcheck.ktx)
+    implementation(libs.firebase.appcheck.playintegrity)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
     implementation(platform(libs.firebase.bom))
     implementation(libs.googleid)
     implementation("com.google.firebase:firebase-auth")
+    implementation("com.google.firebase:firebase-functions")
+    implementation("com.google.firebase:firebase-firestore")
     implementation("com.google.android.gms:play-services-auth:21.4.0")                // or latest
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.9.0")  // or latest
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.9.2")
